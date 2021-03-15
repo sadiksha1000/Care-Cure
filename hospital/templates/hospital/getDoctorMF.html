@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}
+    <title>All Doctors</title>
+{% endblock %}
+{% block content %}
+<style>
+   .success_message{
+        background:#4DB6AC;
+        color:#fff;
+        border-radius:5px;
+    }
+    .error_message{
+        background:red;
+        color:#fff;
+        border-radius:5px;
+    }
+</style>
+<div class="container">
+    {% for message in messages%}
+       {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+            <h6 class="success_message py-3 px-1 my-2 text-center">{{message}}</h6>
+       {% endif %}
+
+       {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+           <h6 class="error_message py-3 px-1 my-2 text-center">
+              {{message}}
+           </h6>
+       {% endif %}
+    {% endfor %}
+    <h3 class="text-center">Our Doctors</h3>
+    <a class="btn btn-primary btn-sm ml-auto mb-2 justify-content-end " href="/hospital/postDoctorMF">Add New Doctor</a>
+    <div class="row">
+        {% for doctor in doctors %}
+            <div class="col-lg-4 col-md-4 col-6">
+                <div class="card" style="width:23rem; height:15rem;">
+                    <img src="{{doctor.doctor_image}}" alt="Image of doctor" class="card-img-top">
+                    <div class="card-body">
+                        <div class="card-title">{{doctor.Name}}</div>
+                        <p class="card-text">{{doctor.Designation}}</p>
+
+                        <div class="container">
+                            <a href="{% url 'view_doctor' doctor.id%}" class="btn btn-primary" style="font-size:0.7rem">VIEW PROFILE</a>
+                            <a href="#" class="btn btn-primary " style="font-size:0.7rem">SCHEDULE APPOINTMENT</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

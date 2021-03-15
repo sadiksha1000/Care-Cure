@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+{% load bootstrap %}
+{% block title %}
+    <title> View Doctors </title>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-2">
+                <div class="card" style="width:18rem; height:15rem;">
+                    <img src="{{doctor.doctor_image}}" alt="Image of doctor" class="card-img-top">
+                    <div class="card-body">
+                        <div class="card-title">{{doctor.Name}}</div>
+                        <p class="card-text">{{doctor.Designation}}</p>
+                        <p class="card-text">{{doctor.Email}}</p>
+                        <div class="container">
+                            <a href="#" class="btn btn-primary " style="font-size:0.7rem">SCHEDULE APPOINTMENT</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 offset-lg-1 col-md-8 offset-md-1 col-8 offset-1">
+                <div class="card py-2 px-2">
+                   <h3>EXPERIENCE</h3>
+                    <p class="text-justify">
+                        {{doctor.Experience}}
+                    </p>
+                    <h3>BACKGROUND</h3>
+                    <p>
+                        {{doctor.Background}}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-2">
+                <div class="card" style="width:18rem; height:15rem;">
+                    <div class="card-title">
+                        <h4>SCHEDULE</h4>
+                        <p>{{doctor.Schedule}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{%endblock%}

@@ -1,0 +1,31 @@
+*{
+    font-family: Source Sans Pro,News Cycle, sans-serif;
+    font-size:1 rem;
+    color:#363636;
+    cursor:pointer;
+    box-sizing:border-box;
+}
+.navbar{
+    padding:0!important;
+}
+.navbar-brand{
+    font-size:2.4rem;
+    font-weight: 400;
+}
+img{
+    width:70px;
+    height:70px;
+}
+.nav-link{
+    font-size:1.1rem;
+}
+.img-fluid{
+    background-position:top;
+    background-repeat:no-repeat;
+    background-size:cover;
+    width:100%;
+    height:800px;
+}
+.btn-holder{
+    font-size: 0.1rem!important;
+}
